@@ -1,0 +1,49 @@
+{% set name = "prms" %}
+{% set version = "6.0.0" %}
+{% set release = "alpha" %}
+{% set build_number = "0" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/mdpiper/{{ name }}
+  git_branch: mdpiper/build-with-conda
+
+build:
+  string: {{ release }}{{ build_number }}
+
+requirements:
+  build:
+    - cmake
+    - make
+    - libgfortran >=4.0.0 # [osx]
+    - {{ compiler('fortran') }}
+    - libnetcdf
+    - netcdf-fortran
+  host:
+    - libnetcdf
+    - netcdf-fortran
+    - coretran
+  run:
+    - libnetcdf
+    - netcdf-fortran
+    - coretran
+
+test:
+  commands:
+    - prms
+
+about:
+  home: https://www.usgs.gov/software/precipitation-runoff-modeling-system-prms
+  license:
+  license_file:
+  summary: The USGS Precipitation Runoff Modeling System
+  description: |
+    The Precipitation-Runoff Modeling System (PRMS) is a
+    deterministic, distributed-parameter, physical process based
+    modeling system developed to evaluate the response of various
+    combinations of climate and land use on streamflow and general
+    watershed hydrology.
+  dev_url: https://github.com/nhm-usgs/prms
