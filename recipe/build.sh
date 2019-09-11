@@ -2,6 +2,7 @@
 
 if [[ `uname -s` == 'Darwin' ]]; then
     export MACOSX_DEPLOYMENT_TARGET=""
+    git checkout -- src/prmslib/misc/c_Simulation.f90  # weird git issue
 fi
 
 mkdir _build && cd _build
