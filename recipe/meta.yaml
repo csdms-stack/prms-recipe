@@ -8,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/mdpiper/{{ name }}
-  git_branch: mdpiper/build-with-conda
+  git_url: https://github.com/rmcd-mscb/{{ name }}
+  git_branch: 6.0.0_dev_bmi
 
 build:
   string: {{ release }}{{ build_number }}
