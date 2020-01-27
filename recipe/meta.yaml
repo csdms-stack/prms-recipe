@@ -1,7 +1,7 @@
 {% set name = "prms" %}
 {% set version = "6.0.0" %}
 {% set release = "alpha" %}
-{% set build_number = "1" %}
+{% set build_number = "2" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/rmcd-mscb/{{ name }}
-  git_branch: 6.0.0_dev_bmi
+  git_rev: f987cb57facd3acfe16942ad6c9c4e7062247172
 
 build:
   string: {{ release }}{{ build_number }}
@@ -32,8 +32,12 @@ requirements:
     - coretran
 
 test:
+  source_files:
+    - pipestem
   commands:
-    - prms
+    - cd pipestem
+    - prms control.default
+    - test -f output/summary_daily.nc
 
 about:
   home: https://www.usgs.gov/software/precipitation-runoff-modeling-system-prms
