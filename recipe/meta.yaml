@@ -1,7 +1,7 @@
 {% set name = "prms" %}
 {% set version = "6.0.0" %}
 {% set release = "alpha" %}
-{% set build_number = "2" %}
+{% set build_number = "3" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/rmcd-mscb/{{ name }}
-  git_rev: f987cb57facd3acfe16942ad6c9c4e7062247172
+  git_rev: 707f8489f585809c03ccd540e6d1c6b3cadb99dd
 
 build:
   string: {{ release }}{{ build_number }}
