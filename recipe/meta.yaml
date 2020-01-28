@@ -41,8 +41,8 @@ test:
 
 about:
   home: https://www.usgs.gov/software/precipitation-runoff-modeling-system-prms
-  license:
-  license_file:
+  license: MIT
+  license_file: LICENSE.md
   summary: The USGS Precipitation Runoff Modeling System
   description: |
     The Precipitation-Runoff Modeling System (PRMS) is a
