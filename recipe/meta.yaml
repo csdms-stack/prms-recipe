@@ -31,12 +31,8 @@ requirements:
     - coretran
 
 test:
-  source_files:
-    - pipestem
   commands:
-    - cd pipestem
-    - prms control.default
-    - test -f output/summary_daily.nc
+    - prms
 
 about:
   home: https://www.usgs.gov/software/precipitation-runoff-modeling-system-prms
