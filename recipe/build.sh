@@ -1,5 +1,3 @@
-#! /usr/bin/env bash
-
 mkdir _build && cd _build
 NETCDF_DIR=$PREFIX cmake \
     -DCMAKE_BUILD_TYPE=Release \
