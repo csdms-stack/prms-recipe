@@ -1,7 +1,7 @@
 {% set name = "prms" %}
 {% set version = "6.0.0" %}
-{% set release = "alpha" %}
-{% set build_number = "9" %}
+{% set release = "bmi_dev" %}
+{% set build_number = "0" %}
 
 package:
   name: {{ name }}
