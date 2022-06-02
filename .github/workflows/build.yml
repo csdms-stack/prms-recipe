@@ -1,0 +1,45 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build-unix:
+    if:
+      github.event_name == 'push' || github.event.pull_request.head.repo.full_name !=
+      github.repository
+
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.8"]
+        build-type: [Release]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: ${{ matrix.python-version }}
+          mamba-version: "*"
+          channels: conda-forge,csdms-stack
+          channel-priority: true
+
+      - name: Show conda installation info
+        run: |
+          conda info
+          conda list
+
+      - name: Install build tools into env
+        run: |
+          mamba install -c conda-forge conda-build anaconda-client
+
+      - name: Build recipe
+        run: |
+          conda build ./recipe
