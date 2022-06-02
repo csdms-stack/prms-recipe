@@ -1,7 +1,6 @@
 [![Anaconda-Server Badge](https://anaconda.org/csdms-stack/prms/badges/version.svg)](https://anaconda.org/csdms-stack/prms)
 [![Anaconda-Server Badge](https://anaconda.org/csdms-stack/prms/badges/platforms.svg)](https://anaconda.org/csdms-stack/prms)
 [![Anaconda-Server Badge](https://anaconda.org/csdms-stack/prms/badges/downloads.svg)](https://anaconda.org/csdms-stack/prms)
-[![Build Status](https://travis-ci.org/csdms-stack/prms-recipe.svg?branch=master)](https://travis-ci.org/csdms-stack/prms-recipe)
 
 # prms-recipe
 
