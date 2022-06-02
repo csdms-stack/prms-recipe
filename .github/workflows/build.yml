@@ -45,4 +45,4 @@ jobs:
           ANACONDA_TOKEN: ${{ secrets.CSDMS_STACK_TOKEN_2023 }}
         run: |
           conda config --set anaconda_upload yes
-          conda build ./recipe --user=csdms-stack --label=dev --token="$ANACONDA_TOKEN"
+          conda build ./recipe --user=csdms-stack --label=main --token="$ANACONDA_TOKEN"
