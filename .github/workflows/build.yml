@@ -40,6 +40,9 @@ jobs:
         run: |
           mamba install -c conda-forge conda-build anaconda-client
 
-      - name: Build recipe
+      - name: Build recipe and upload to anaconda.org
+        env:
+          ANACONDA_TOKEN: ${{ secrets.CSDMS_STACK_TOKEN_2023 }}
         run: |
-          conda build ./recipe
+          conda config --set anaconda_upload yes
+          conda build ./recipe --user=csdms-stack --label=dev --token="$ANACONDA_TOKEN"
